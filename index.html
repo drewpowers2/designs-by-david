@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Designs By David — LA's Luxury Florist</title>
+  <meta name="description" content="Award-winning luxury floral arrangements. Same-day delivery in Los Angeles, Beverly Hills, and Bel Air. Trusted by Hollywood since 1990." />
+
+  <!-- ============================================================
+       META PIXEL — REPLACE YOUR_PIXEL_ID WITH YOUR ACTUAL PIXEL ID
+       ============================================================ -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- ============================================================
+       END META PIXEL
+       ============================================================ -->
+
+  <style>
+    /* ---- RESET & BASE ---- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #4a6741;
+      --green-dark: #3a5232;
+      --cream:      #f5f0e8;
+      --cream-dark: #ede7d9;
+      --text:       #2c2c2c;
+      --text-light: #5a5a5a;
+      --gold:       #c9a84c;
+      --font-serif: 'Georgia', 'Times New Roman', serif;
+      --font-sans:  'Helvetica Neue', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--text);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ---- UTILITY ---- */
+    .btn {
+      display: inline-block;
+      background-color: var(--green);
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 2px;
+      transition: background-color 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover { background-color: var(--green-dark); }
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    .btn-outline:hover { background-color: rgba(255,255,255,0.15); }
+
+    /* ---- TOP BAR ---- */
+    .topbar {
+      background-color: var(--green);
+      color: #fff;
+      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 10px 16px;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 92vh;
+      background-color: var(--cream);
+    }
+
+    .hero__copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 48px 60px 56px;
+    }
+
+    .hero__eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 20px;
+    }
+
+    .hero__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .hero__sub {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--text-light);
+      max-width: 380px;
+      margin-bottom: 36px;
+    }
+
+    .hero__image {
+      overflow: hidden;
+      max-height: 92vh;
+    }
+
+    /* ---- TRUST BAR ---- */
+    .trustbar {
+      background-color: var(--green);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      padding: 20px 24px;
+      flex-wrap: wrap;
+    }
+
+    .trustbar__item {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trustbar__item span.dot {
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* ---- SOCIAL PROOF ---- */
+    .proof {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 70vh;
+      background-color: var(--cream-dark);
+    }
+
+    .proof__image {
+      overflow: hidden;
+    }
+
+    .proof__copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 56px 60px 48px;
+    }
+
+    .proof__stars {
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      color: var(--gold);
+    }
+
+    .proof__rating {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .proof__tagline {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 28px;
+    }
+
+    .proof__quote {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--text-light);
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      margin-bottom: 36px;
+    }
+
+    /* ---- FOOTER CTA ---- */
+    .footer-cta {
+      background-color: var(--green);
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 55vh;
+    }
+
+    .footer-cta__copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 48px 60px 56px;
+    }
+
+    .footer-cta__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .footer-cta__sub {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      opacity: 0.85;
+      max-width: 380px;
+      margin-bottom: 36px;
+    }
+
+    .footer-cta__image {
+      overflow: hidden;
+    }
+
+    /* ---- BOTTOM BAR ---- */
+    .bottombar {
+      background-color: var(--cream-dark);
+      text-align: center;
+      padding: 20px 16px;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+    }
+
+    .bottombar a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    /* ============================================================
+       MOBILE — everything stacks below 680px
+       ============================================================ */
+    @media (max-width: 680px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero__image {
+        height: 55vw;
+        max-height: 320px;
+        order: -1;
+      }
+
+      .hero__copy {
+        padding: 36px 24px 44px;
+      }
+
+      .hero__headline {
+        font-size: 2rem;
+      }
+
+      .hero__sub {
+        font-size: 0.95rem;
+      }
+
+      .trustbar {
+        gap: 16px;
+        padding: 16px;
+      }
+
+      .trustbar__item {
+        font-size: 0.72rem;
+      }
+
+      .proof {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .proof__image {
+        height: 55vw;
+        max-height: 300px;
+      }
+
+      .proof__copy {
+        padding: 36px 24px 44px;
+      }
+
+      .footer-cta {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .footer-cta__image {
+        height: 55vw;
+        max-height: 300px;
+        order: 1;
+      }
+
+      .footer-cta__copy {
+        padding: 40px 24px 44px;
+        order: -1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    Same-Day Delivery &nbsp;·&nbsp; Los Angeles &nbsp;·&nbsp; Beverly Hills &nbsp;·&nbsp; Bel Air
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero__copy">
+      <p class="hero__eyebrow">Designs by David &mdash; Est. 1990</p>
+      <h1 class="hero__headline">
+        LA's Florist<br>to the Stars.<br>Now Delivering<br>to You.
+      </h1>
+      <p class="hero__sub">
+        Award-winning luxury arrangements hand-crafted by David Mark.
+        Same-day delivery across Los Angeles, Beverly Hills, and Bel Air.
+      </p>
+      <a
+        class="btn"
+        href="https://designsbydavid.net?utm_source=facebook&utm_medium=paid_social&utm_campaign=la_awareness&utm_content=hero_cta"
+        onclick="fbq('track', 'ViewContent');"
+        target="_blank"
+        rel="noopener"
+      >
+        Shop Same-Day Delivery
+      </a>
+    </div>
+
+    <div class="hero__image">
+      <!--
+        REPLACE THIS SRC with a high-quality romantic/celebratory arrangement photo from David.
+        Recommended: a lush, colourful bouquet. NOT a sympathy/funeral arrangement.
+        Ideal dimensions: 800x1000px or taller.
+      -->
+      <img
+        src="https://images.unsplash.com/photo-1487530811015-780c4b7f7c8f?w=800&q=80"
+        alt="Luxury floral arrangement by Designs by David, Los Angeles"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trustbar">
+    <div class="trustbar__item"><span class="dot"></span> Award-Winning Designer</div>
+    <div class="trustbar__item"><span class="dot"></span> Trusted by Hollywood Since 1990</div>
+    <div class="trustbar__item"><span class="dot"></span> 4.87/5 &mdash; 463 Reviews</div>
+    <div class="trustbar__item"><span class="dot"></span> Same-Day Delivery Available</div>
+  </div>
+
+  <!-- SOCIAL PROOF SECTION -->
+  <section class="proof">
+    <div class="proof__image">
+      <!--
+        REPLACE THIS SRC with a second high-quality arrangement photo.
+        Recommended: a large, dramatic event or wedding arrangement. NOT a sympathy arrangement.
+      -->
+      <img
+        src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80"
+        alt="Luxury event floral design by Designs by David"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="proof__copy">
+      <div class="proof__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="proof__rating">4.87 / 5</p>
+      <p class="proof__tagline">463 Verified Reviews &nbsp;&middot;&nbsp; Trusted by Celebrities Since 1990</p>
+      <blockquote class="proof__quote">
+        "David scores again &mdash; my wife is only impressed with David's arrangements.
+        He's the only florist for me."
+      </blockquote>
+      <a
+        class="btn"
+        href="https://designsbydavid.net?utm_source=facebook&utm_medium=paid_social&utm_campaign=la_awareness&utm_content=proof_cta"
+        onclick="fbq('track', 'ViewContent');"
+        target="_blank"
+        rel="noopener"
+      >
+        Shop Same-Day Delivery
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA SECTION -->
+  <section class="footer-cta">
+    <div class="footer-cta__copy">
+      <h2 class="footer-cta__headline">
+        Ready to Send<br>Something<br>Unforgettable?
+      </h2>
+      <p class="footer-cta__sub">
+        Every arrangement is designed personally by David Mark.
+        Order before 2&nbsp;PM for same-day delivery across LA.
+      </p>
+      <a
+        class="btn btn-outline"
+        href="https://designsbydavid.net?utm_source=facebook&utm_medium=paid_social&utm_campaign=la_awareness&utm_content=footer_cta"
+        onclick="fbq('track', 'InitiateCheckout');"
+        target="_blank"
+        rel="noopener"
+      >
+        Order Now at DesignsByDavid.net
+      </a>
+    </div>
+
+    <div class="footer-cta__image">
+      <!--
+        REPLACE THIS SRC with a third arrangement photo — ideally a close-up detail shot
+        or a romantic/anniversary arrangement.
+      -->
+      <img
+        src="https://images.unsplash.com/photo-1490750967868-88df5691cc2e?w=800&q=80"
+        alt="Romantic floral arrangement by Designs by David"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <!-- BOTTOM BAR -->
+  <div class="bottombar">
+    &copy; 2026 Designs by David &nbsp;&middot;&nbsp;
+    11732 W Pico Blvd, Los Angeles CA 90064 &nbsp;&middot;&nbsp;
+    <a href="https://designsbydavid.net" target="_blank" rel="noopener">designsbydavid.net</a>
+  </div>
+
+</body>
+</html>
